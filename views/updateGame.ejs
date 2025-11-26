@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <form action="/game/<%= game.id%>/update" method="post">
+            <label for="name">Name:</label> <br>
+            <input type="text" name="name" id="name" value="<%= game.name ? game.name: '' %>"> <br>
+            <label for="description">Description:</label> <br>
+            <input type="text" name="description" id="description" value="<%= game.description ? game.description: '' %>"> <br>
+            <label for="release_date">Release_date:</label> <br>
+            <input type="date" name="release_date" id="release_date" value="<%= game.release_date ? game.release_date: '' %>"> <br>
+            <label for="price">Price:</label> <br>
+            <input type="number" name="price" id="price" value="<%= game.price ? game.price: '' %>"> <br>
+            <label for="genres">Genres:</label> <br>
+            <% genres.forEach(genre =>{%>
+                <label for="<%= genre.id %>"><%= genre.name %></label>
+                <input type="checkbox" name="genres" value="<%= genre.id %>" id="<%= genre.id %>"
+                    <% if (selectedGenres && selectedGenres.includes(genre.id)){ %>
+                        checked
+                    <% } %>
+                >
+            <% }); %>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <ul>
+            <% games.forEach(game => { %>
+                <li>
+                    <a href="/game/<%= game.id %>"> <%= game.name%> </a>
+                </li>
+            <% }); %>
+        </ul>
+        <button onclick="location.href='/game/new'">New Game</button> <br> <br>
+        <a href="/">Go Home</a>
+    </body>
+</html>

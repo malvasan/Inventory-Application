@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1>Genres</h1>
+        <ul>
+            <% genres.forEach(genre => {%>
+                <li>
+                    <a href="/genre/<%= genre.id %>"><%= genre.name %></a>
+                </li>
+                <button onclick="location.href='/genre/<%= genre.id %>/update'">Update Genre</button>
+                <form action="/genre/<%= genre.id %>/delete" method="post">
+                    <input type="submit" value="Delete">
+                </form>
+            <% }); %>
+        </ul>
+        <button onclick="location.href='/genre/new'"> New Genre</button>
+    </body>
+</html>

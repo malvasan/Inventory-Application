@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <h1><%= game.name %></h1>
+            <ul>
+                <li>Description: <%= game.description %></li>
+                <li>Release Date:<%= game.release_date %></li>
+                <li>Price: <%= game.price %></li>
+            </ul>
+        <button onclick="location.href='/game/<%= game.id %>/update'">Update Game</button> 
+        <form action="/game/<%= game.id %>/delete" method="post">
+            <input type="submit" value="Delete">
+        </form><br> <br>
+        <a href="/">Go Home</a>
+    </body>
+</html>

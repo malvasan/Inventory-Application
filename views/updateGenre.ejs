@@ -1,0 +1,11 @@
+<html>
+    <body>
+        <form action="/genre/<%= genre.id %>/update" method="post">
+            <label for="name">Name</label> <br>
+            <input type="text" name="name" id="name" value="<%= genre.name ? genre.name: '' %>"> <br>
+            <label for="description">Description</label> <br>
+            <input type="text" name="description" id="description" value="<%= genre.description ? genre.description: '' %>"> <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <form action="/game/new" method="post">
+            <label for="name">Name:</label> <br>
+            <input type="text" name="name" id="name"> <br>
+            <label for="description">Description:</label> <br>
+            <input type="text" name="description" id="description"> <br>
+            <label for="release_date">Release_date:</label> <br>
+            <input type="date" name="release_date" id="release_date"> <br>
+            <label for="price">Price:</label> <br>
+            <input type="number" name="price" id="price"> <br>
+            <label for="genres">Genres:</label> <br>
+            <% genres.forEach(genre =>{%>
+                <label for="<%= genre.id %>"><%= genre.name %></label>
+                <input type="checkbox" name="genres" value="<%= genre.id %>" id="<%= genre.id %>">
+            <% }); %>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
